@@ -39,6 +39,7 @@ define dotfiles (
                     ln -s \$f ./ || true;
                   done",
         true  => "for f in ${creates}/${dotfiles_dir}/.[^.]*; do
+					echo "Processing $f"
                     if [ \"`readlink \${f##*/}`\" != \"`echo \$f`\" ]; then
                      mv \${f##*/} \${f##*/}${bak_ext};
                      ln -fs \$f ./; 
