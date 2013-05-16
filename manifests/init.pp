@@ -13,7 +13,7 @@ define dotfiles (
 ) {
 
   if $homedir == '' {
-    $real_homedir = "/home/${title}"
+    $real_homedir = "/Users/${title}"
   } else {
     $real_homedir = $homedir
   }
