@@ -13,7 +13,7 @@ define dotfiles::update(
       command => $rebase ? {true  => "git pull --rebase", false => "git pull", },
       onlyif  => "[ ! -f .git/FETCH_HEAD ] || [ \"$(( ( $(date +%s) - $(stat -c \"%Y\" .git/FETCH_HEAD) ) / 60 ))\" -ge \"${frequency}\" ]",
       user    => "${title}",
-      require => Package['git'],
+      require => Package['boxen/brews/git'],
     }
   }
 
