@@ -9,7 +9,6 @@ define dotfiles (
   $bak_ext      = '.bak',
   $single_pull  = false,
   $rebase       = true,
-  $frequency    = 30,
 ) {
 
   if $homedir == '' {
@@ -61,7 +60,6 @@ define dotfiles (
     cwd         => $creates,
     single_pull => $single_pull,
     rebase      => $rebase,
-    frequency   => $frequency,
     require     => Dotfiles::Clone["${title}"];
   }
 
