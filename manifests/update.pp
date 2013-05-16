@@ -4,7 +4,7 @@ define dotfiles::update(
   $cwd,
   $single_pull,
   $rebase,
-  ) {
+) {
 
   if (!$single_pull) {
     exec { "reset ${gituser} dot file changes for ${titls}":
